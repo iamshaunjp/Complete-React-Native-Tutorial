@@ -2,6 +2,7 @@
   "expo": {
     "name": "shelfie_app",
     "slug": "shelfie_app",
+    "scheme": "shelfieapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,6 +24,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
