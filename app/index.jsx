@@ -1,8 +1,9 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { Link } from 'expo-router'
 
 import Logo from '../assets/img/logo_light.png'
 
-const index = () => {
+const Home = () => {
   return (
     <View style={styles.container}>
       <Image source={Logo} style={styles.img} />
@@ -13,14 +14,13 @@ const index = () => {
         Reading List App
       </Text>
 
-      <View style={styles.card}>
-        <Text>Hello, this is a Card</Text>
-      </View>
+      <Link href="/about" style={styles.link}>About Page</Link>
+      <Link href="/contact" style={styles.link}>Contact Page</Link>
     </View>
   )
 }
 
-export default index
+export default Home
 
 const styles = StyleSheet.create({
   container: {
@@ -36,10 +36,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
-  card: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 5,
-    boxShadow: "4px 4px rgba(0,0,0,0.1)"
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1
   }
 })
