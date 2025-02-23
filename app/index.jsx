@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 
-const index = () => {
+const Home = () => {
   return (
     <View>
-      <Text>Shelfie App</Text>
+      <Text>Home</Text>
     </View>
   )
 }
-
-export default index
+export default Home
 
 const styles = StyleSheet.create({})
