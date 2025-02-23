@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 
 import Logo from '../assets/img/logo_light.png'
 
-const index = () => {
+const Home = () => {
   return (
     <View style={styles.container}>
       <Image source={Logo} style={styles.img} />
@@ -20,7 +20,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Home
 
 const styles = StyleSheet.create({
   container: {
