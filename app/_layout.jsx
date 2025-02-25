@@ -13,7 +13,6 @@ export default function RootLayout() {
       <Stack screenOptions={{
         headerStyle: { backgroundColor: theme.navBackground },
         headerTintColor: theme.title,
-        headerTitleStyle: { fontSize: 18, fontWeight: "bold" },
       }}>
         {/* Individual Screens */}
         <Stack.Screen name="index" options={{ title: "Home" }} />
