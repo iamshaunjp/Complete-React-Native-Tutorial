@@ -5,6 +5,7 @@ import { Colors } from '../../constants/Colors'
 import ThemedView from '../../components/ThemedView'
 import ThemedText from '../../components/ThemedText'
 import Spacer from '../../components/Spacer'
+import ThemedButton from '../../components/ThemedButton'
 
 const Register = () => {
 
@@ -20,12 +21,16 @@ const Register = () => {
         Register an Account
       </ThemedText>
 
-      <Pressable
+      {/* <Pressable
         onPress={handleSubmit}
         style={({ pressed }) => [styles.btn, pressed && styles.pressed]}
       >
         <Text style={{color: "#f2f2f2"}}>Register</Text>
-      </Pressable>
+      </Pressable> */}
+
+      <ThemedButton onPress={handleSubmit}>
+        <Text style={{ color: '#f2f2f2' }}>Register</Text>
+      </ThemedButton>
 
       <Spacer height={100} />
       <Link href="/login" replace>
