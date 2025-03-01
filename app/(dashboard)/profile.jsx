@@ -4,7 +4,7 @@ import Spacer from "../../components/Spacer"
 import ThemedText from "../../components/ThemedText"
 import ThemedView from "../../components/ThemedView"
 
-const Books = () => {
+const Profile = () => {
   return (
     <ThemedView style={styles.container}>
 
@@ -20,13 +20,13 @@ const Books = () => {
   )
 }
 
-export default Books
+export default Profile
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "stretch",
+    alignItems: "center",
   },
   heading: {
     fontWeight: "bold",
