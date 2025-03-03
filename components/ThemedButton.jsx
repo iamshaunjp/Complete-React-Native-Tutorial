@@ -10,6 +10,7 @@ function ThemedButton({ style, ...props }) {
     />
   )
 }
+
 const styles = StyleSheet.create({
   btn: {
     backgroundColor: Colors.primary,
