@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { StyleSheet, Text, Keyboard, TouchableWithoutFeedback, TextInput } from 'react-native'
 import { Link } from 'expo-router'
 import { useState } from 'react'
 
@@ -24,6 +24,8 @@ const Login = () => {
         <ThemedText title={true} style={styles.title}>
           Login to Your Account
         </ThemedText>
+
+        {/* <TextInput placeholder="Email" /> */}
 
         <Spacer />
         <ThemedTextInput
