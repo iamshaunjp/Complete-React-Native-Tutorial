@@ -1,6 +1,7 @@
 import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
 import { Link } from 'expo-router'
 import { useState } from 'react'
+import { useUser } from '../../hooks/useUser'
 
 import ThemedView from '../../components/ThemedView'
 import ThemedText from '../../components/ThemedText'
@@ -12,8 +13,15 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const { user, register } = useUser()
+
   const handleSubmit = async () => {
-    console.log('register form submitted: ', email, password)
+    try {
+      await register(email, password)
+      console.log('current user is: ', user)
+    } catch (error) {
+      
+    }
   }
 
   return (
