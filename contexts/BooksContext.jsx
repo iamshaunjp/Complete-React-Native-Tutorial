@@ -1,12 +1,16 @@
 import { createContext, useState } from "react"
+import { databases } from "../lib/appwrite"
+import { ID, Permission, Role } from "react-native-appwrite"
+import { useUser } from "../hooks/useUser"
 
-const DATABASE_ID = "67b1c7de000c3e31c359"
-const COLLECTION_ID = "67b1c7e500143ab954ca"
+const DATABASE_ID = "67cdd0c9002307459723"
+const COLLECTION_ID = "67cdd0cf00307157221e"
 
 export const BooksContext = createContext()
 
 export function BooksProvider({children}) {
   const [books, setBooks] = useState([])
+  const { user } = useUser()
 
   async function fetchBooks() {
     try {
@@ -18,9 +22,7 @@ export function BooksProvider({children}) {
 
   async function fetchBookById(id) {
     try {
-
-  
-      return response 
+      
     } catch (error) {
       console.log(error.message)
     }
@@ -28,7 +30,17 @@ export function BooksProvider({children}) {
 
   async function createBook(data) {
     try {
-      
+      await databases.createDocument(
+        DATABASE_ID,
+        COLLECTION_ID,
+        ID.unique(),
+        {...data, userId: user.$id},
+        [
+          Permission.read(Role.user(user.$id)),
+          Permission.update(Role.user(user.$id)),
+          Permission.delete(Role.user(user.$id)),
+        ]
+      )
     } catch (error) {
       console.log(error.message)
     }
