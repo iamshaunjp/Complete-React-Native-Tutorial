@@ -23,6 +23,9 @@ export default function RootLayout() {
 
           {/* Individual Screens */}
           <Stack.Screen name="index" options={{ title: "Home" }} />
+
+          {/* Book details screen */}
+          {/* <Stack.Screen name="books/[id]" options={} */}
         </Stack>
       </BooksProvider>
     </UserProvider>
