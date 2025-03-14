@@ -2,6 +2,7 @@ import { StyleSheet, Text } from "react-native"
 import { useLocalSearchParams, useRouter } from "expo-router"
 import { useEffect, useState } from "react"
 import { useBooks } from "../../../hooks/useBooks"
+import { Colors } from "../../../constants/Colors"
 
 // themed components
 import ThemedText from "../../../components/ThemedText"
@@ -9,7 +10,8 @@ import ThemedButton from "../../../components/ThemedButton"
 import ThemedView from "../../../components/ThemedView"
 import Spacer from "../../../components/Spacer"
 import ThemedCard from "../../../components/ThemedCard"
-import { Colors } from "../../../constants/Colors"
+import ThemedLoader from "../../../components/ThemedCard"
+
 
 const BookDetails = () => {
   const [book, setBook] = useState(null)
@@ -20,6 +22,7 @@ const BookDetails = () => {
 
   const handleDelete = async () => {
     await deleteBook(id)
+    setBook(null)
     router.replace('/books')
   }
 
@@ -30,12 +33,14 @@ const BookDetails = () => {
     }
 
     loadBook()
+
+    return () => setBook(null)
   }, [id])
 
   if (!book) {
     return (
       <ThemedView safe={true} style={styles.container}>
-        <ThemedText>Loading...</ThemedText>
+        <ThemedLoader />
       </ThemedView>
     )
   }
