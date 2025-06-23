@@ -9,7 +9,10 @@ export default function RootLayout() {
 
   return (
     <>
-      <StatusBar value="auto" />
+      
+      //StatusBar dont  accept "value"
+      
+      <StatusBar style="auto" />
       <Stack screenOptions={{
         headerStyle: { backgroundColor: theme.navBackground },
         headerTintColor: theme.title,
